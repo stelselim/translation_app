@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:translation/application/models/translation_model.dart';
 import 'package:translation/constants/language_constants.dart';
+import 'package:translation/infrastructure/utilities/get_random_id.dart';
 
 class TranslationEntity {
   final String text;
@@ -82,6 +83,7 @@ class TranslationEntity {
 
   TranslationModel toTranslationModel() {
     return TranslationModel(
+      id: getRandomId,
       text: text,
       sourceLanguage: languageTypeFromCode(sourceLanguageCode),
       translateTime: translateTime,

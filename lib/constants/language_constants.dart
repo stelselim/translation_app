@@ -1,12 +1,26 @@
+import 'package:hive/hive.dart';
+
+part 'language_constants.g.dart';
+
+@HiveType(typeId: 1)
 enum LanguageTypes {
+  @HiveField(0)
   invalid,
+  @HiveField(1)
   afrikaans,
+  @HiveField(2)
   arabic,
+  @HiveField(3)
   english,
+  @HiveField(4)
   french,
+  @HiveField(5)
   turkish,
+  @HiveField(6)
   italian,
+  @HiveField(7)
   spanish,
+  @HiveField(8)
   chineseSimplified
 }
 

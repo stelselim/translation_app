@@ -1,13 +1,24 @@
 import 'package:flutter/foundation.dart';
+import 'package:hive/hive.dart';
 
 import 'package:translation/constants/language_constants.dart';
 
+part 'translation_model.g.dart';
+
+@HiveType(typeId: 0)
 class TranslationModel {
-  final String text;
-  final LanguageTypes sourceLanguage;
-  final DateTime translateTime;
-  final Map<LanguageTypes, String> translatedTexts;
+  @HiveField(0)
+  String id;
+  @HiveField(1)
+  String text;
+  @HiveField(2)
+  LanguageTypes sourceLanguage;
+  @HiveField(3)
+  DateTime translateTime;
+  @HiveField(4)
+  Map<LanguageTypes, String> translatedTexts;
   TranslationModel({
+    required this.id,
     required this.text,
     required this.sourceLanguage,
     required this.translateTime,
@@ -21,6 +32,7 @@ class TranslationModel {
     Map<LanguageTypes, String>? translatedTexts,
   }) {
     return TranslationModel(
+      id: id,
       text: text ?? this.text,
       sourceLanguage: sourceLanguage ?? this.sourceLanguage,
       translateTime: translateTime ?? this.translateTime,
@@ -30,7 +42,7 @@ class TranslationModel {
 
   @override
   String toString() {
-    return 'TranslationModel(text: $text, sourceLanguage: $sourceLanguage, translateTime: $translateTime, translatedTexts: $translatedTexts)';
+    return 'TranslationModel(id: $id, text: $text, sourceLanguage: $sourceLanguage, translateTime: $translateTime, translatedTexts: $translatedTexts)';
   }
 
   @override
@@ -38,6 +50,7 @@ class TranslationModel {
     if (identical(this, other)) return true;
 
     return other is TranslationModel &&
+        other.id == id &&
         other.text == text &&
         other.sourceLanguage == sourceLanguage &&
         other.translateTime == translateTime &&
@@ -46,7 +59,8 @@ class TranslationModel {
 
   @override
   int get hashCode {
-    return text.hashCode ^
+    return id.hashCode ^
+        text.hashCode ^
         sourceLanguage.hashCode ^
         translateTime.hashCode ^
         translatedTexts.hashCode;
