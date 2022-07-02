@@ -47,6 +47,31 @@ class HomeProvider extends ChangeNotifier {
     }
   }
 
+  Future<void> translateWithText(String text) async {
+    translateBoxTextEditingController.text = text;
+    loading = true;
+    _translateBoxUnfocus();
+
+    try {
+      translateResult = await translateRepository.translateToMultipleLanguage(
+        translateBoxTextEditingController.value.text,
+        // TODO: The source language will be selected by user.
+        LanguageTypes.english,
+        // TODO: Target languages will be selected by user.
+        [
+          LanguageTypes.turkish,
+          LanguageTypes.afrikaans,
+          LanguageTypes.french,
+        ],
+      );
+
+      loading = false;
+      notifyListeners();
+    } catch (e) {
+      log("Error on Home Provider translate method: $e");
+    }
+  }
+
   void clearTextField() {
     translateBoxTextEditingController.clear();
     _translateBoxUnfocus();
