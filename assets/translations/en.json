@@ -1,4 +1,9 @@
 {
-    "home_top_app_bar_title":"Home",
-    "not_found_top_app_bar_title":"Page Not Found"
+    "home_top_app_bar_title":"Multiple Translator",
+    "not_found_top_app_bar_title":"Page Not Found",
+    "translate_box_hint_text":"Type here...",
+    "keyboard_done_action_text": "Done",
+    "translate_button_title":"Translate",
+    "translate_clear_button_title":"Clear"
+
 }

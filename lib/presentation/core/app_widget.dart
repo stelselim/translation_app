@@ -19,14 +19,19 @@ class App extends StatelessWidget {
       designSize: design.designSize,
       splitScreenMode: false,
       builder: (context, child) {
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (context) => HomeProvider())
-          ],
-          builder: (context, state) {
-            return RepositoryProvider(
-              create: (context) => TranslateRepository(),
-              child: MaterialApp(
+        return RepositoryProvider(
+          create: (context) => TranslateRepository(),
+          child: MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                create: (context) => HomeProvider(
+                  translateRepository:
+                      RepositoryProvider.of<TranslateRepository>(context),
+                ),
+              )
+            ],
+            builder: (context, state) {
+              return MaterialApp(
                 locale: context.locale,
                 localizationsDelegates: context.localizationDelegates,
                 supportedLocales: context.supportedLocales,
@@ -34,19 +39,19 @@ class App extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
                   appBarTheme: AppBarTheme.of(context).copyWith(
-                    color: colors.primaryColor,
+                    color: colors.kPrimaryColor,
                   ),
                   bottomNavigationBarTheme:
                       BottomNavigationBarTheme.of(context),
                   colorScheme: ColorScheme.fromSwatch().copyWith(
-                    primary: colors.primaryColor,
-                    secondary: colors.secondaryColor,
+                    primary: colors.kPrimaryColor,
+                    secondary: colors.kSecondaryColor,
                   ),
                 ),
                 onGenerateRoute: generateRoutes,
-              ),
-            );
-          },
+              );
+            },
+          ),
         );
       },
     );
