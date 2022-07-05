@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:translation/application/models/translation_model.dart';
 import 'package:translation/application/provider/home_provider.dart';
 import 'package:translation/constants/language_constants.dart';
+import 'package:translation/presentation/styles/text_styles.dart';
+import 'package:flutter/services.dart';
 
 class TranslateResultsWidget extends StatelessWidget {
   final bool loading;
@@ -75,19 +80,74 @@ class TranslateResultsWidget extends StatelessWidget {
           children: [
             SizedBox(
               width: 90,
-              child: Text(
-                language,
+              child: SelectableText(
+                language.toUpperCase(),
                 textAlign: TextAlign.start,
+                style: kBoldBody3TextStyle,
               ),
             ),
+            SizedBox(
+              width: 10.w,
+            ),
             Expanded(
-              child: Text(
-                text,
-                textAlign: TextAlign.left,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: SelectableText(
+                      text,
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 10,
+                    child: Row(
+                      children: [
+                        _shareButton(text),
+                        SizedBox(width: 12.w),
+                        _copyButton(text),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _copyButton(String text) {
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () {
+        Clipboard.setData(ClipboardData(text: text));
+      },
+      child: Icon(
+        Icons.copy,
+        color: Colors.blueGrey.shade800,
+        size: 20.w,
+      ),
+    );
+  }
+
+  Widget _shareButton(String text) {
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () async {
+        try {
+          await Share.share(text);
+        } catch (e) {
+          log(e.toString());
+        }
+      },
+      child: Icon(
+        Icons.share,
+        color: Colors.green.shade600,
+        size: 20.w,
       ),
     );
   }

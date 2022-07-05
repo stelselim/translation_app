@@ -5,7 +5,7 @@ import 'package:translation/application/provider/home_provider.dart';
 import 'package:translation/presentation/components/app_top_bar.dart';
 import 'package:translation/presentation/components/edit_button.dart';
 import 'package:translation/presentation/components/history_button.dart';
-import 'package:translation/presentation/components/translaste_box.dart';
+import 'package:translation/presentation/components/translate_box.dart';
 import 'package:translation/presentation/components/translate_button_bar.dart';
 import 'package:translation/presentation/components/translate_results_widget.dart';
 import 'package:translation/presentation/screens/home/components/edit_body_widget.dart';

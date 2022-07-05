@@ -7,6 +7,8 @@ import 'package:translation/application/provider/home_provider.dart';
 import 'package:translation/infrastructure/services/user_service.dart';
 import 'package:translation/presentation/components/app_top_bar.dart';
 import 'package:translation/presentation/navigation/navigator.dart';
+import 'package:translation/presentation/styles/colors.dart';
+import 'package:translation/presentation/styles/text_styles.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);
@@ -22,22 +24,40 @@ class History extends StatelessWidget {
         itemCount: history.length,
         itemBuilder: (context, index) {
           final item = history.elementAt(index);
-          return GestureDetector(
-            onTap: () => _onTap(context, item),
-            child: _historyListTile(item.text),
-          );
+          return _historyListTile(context, item);
         },
       ),
     );
   }
 
-  Widget _historyListTile(String text) {
-    return Container(
-      width: 120.w,
-      height: 120.w,
-      margin: EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
-      color: Colors.red,
-      child: Text(text),
+  Widget _historyListTile(BuildContext context, TranslationModel item) {
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 7.w),
+      child: Container(
+        width: 120.w,
+        height: 120.w,
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+        alignment: Alignment.centerLeft,
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                item.text,
+                style: kBody2TextStyle,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.translate,
+                color: kLightBlackColor,
+              ),
+              onPressed: () => _onTap(context, item),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
