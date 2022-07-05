@@ -38,6 +38,7 @@ class _MaterialAppWidgetState extends State<MaterialAppWidget> {
       builder: (context, appWidgetProvider, _) {
         return MaterialApp(
           key: materialAppKey,
+          title: "home_top_app_bar_title".tr(),
           locale: context.locale,
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,

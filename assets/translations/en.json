@@ -1,9 +1,16 @@
 {
-    "home_top_app_bar_title":"Multiple Translator",
+    "home_top_app_bar_title":"Multi Translator",
     "not_found_top_app_bar_title":"Page Not Found",
+    "the_page_not_found_title":"The page you’re looking for can’t be found.",
+    "translate_box_label_text":"Translate",
     "translate_box_hint_text":"Type here...",
     "keyboard_done_action_text": "Done",
     "translate_button_title":"Translate",
-    "translate_clear_button_title":"Clear"
-
+    "translate_clear_button_title":"Clear",
+    "app_bar_edit_button_tool_tip":"Edit",
+    "app_bar_cancel_button_tool_tip":"Cancel",
+    "app_bar_history_button_tool_tip":"History",
+    "history_top_app_bar_title":"History",
+    "source_language_dropdown_title":"Source Language:" ,
+    "target_language_chip_list_title": "Target Languages"
 }

@@ -92,3 +92,14 @@ LanguageTypes languageTypeFromCode(String code) {
       return LanguageTypes.invalid;
   }
 }
+
+List<LanguageTypes> kAllLanguages = [
+  LanguageTypes.afrikaans,
+  LanguageTypes.arabic,
+  LanguageTypes.chineseSimplified,
+  LanguageTypes.english,
+  LanguageTypes.french,
+  LanguageTypes.italian,
+  LanguageTypes.spanish,
+  LanguageTypes.turkish,
+];
