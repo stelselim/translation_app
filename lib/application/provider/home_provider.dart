@@ -42,6 +42,9 @@ class HomeProvider extends ChangeNotifier {
   }
 
   Future<void> translate() async {
+    if (translateBoxTextEditingController.value.text == "") {
+      return;
+    }
     loading = true;
     _translateBoxUnfocus();
     notifyListeners();
@@ -66,6 +69,9 @@ class HomeProvider extends ChangeNotifier {
     String text,
     LanguageTypes sourceLanguage,
   ) async {
+    if (text == "") {
+      return;
+    }
     translateBoxTextEditingController.text = text;
     loading = true;
     _translateBoxUnfocus();
