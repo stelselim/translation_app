@@ -11,6 +11,9 @@ class NotFound extends StatelessWidget {
       appBar: AppTopBar(
         title: "not_found_top_app_bar_title".tr(),
       ),
+      body: Center(
+        child: Text("the_page_not_found_title".tr()),
+      ),
     );
   }
 }

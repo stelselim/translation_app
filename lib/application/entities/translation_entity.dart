@@ -88,10 +88,7 @@ class TranslationEntity {
       sourceLanguage: languageTypeFromCode(sourceLanguageCode),
       translateTime: translateTime,
       translatedTexts: translatedTextsWithLanguageCode.map(
-        (key, value) => MapEntry(
-          languageTypeFromCode(sourceLanguageCode),
-          value,
-        ),
+        (key, value) => MapEntry(languageTypeFromCode(key), value),
       ),
     );
   }
