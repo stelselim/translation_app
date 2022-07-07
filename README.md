@@ -1,6 +1,8 @@
 # Multi Translator App
 <b>An app utilizes to translate any text to multiple languages.</b>
 
+<img width=180 src="https://user-images.githubusercontent.com/46201537/177821784-688d3b39-57f0-40dd-9342-41f6a1314bd9.png"/>
+
 <br/>
 
 ## Domain-Driven Design
@@ -64,6 +66,7 @@ adb shell am start  "ibksteltranslate://translation?text=merhaba&lan=tr"
 
 
 ## Setup
+
 This project uses generated files to run. Before running the app, please run.
 
 ```
@@ -81,3 +84,13 @@ flutter pub run build_runner build --delete-conflicting-outputs
 - LinkedIn: [@selimustel](https://www.linkedin.com/in/selimustel/)
 
 <br/>
+
+
+<view style="display: flex;
+  flex-direction: row-reverse;">
+<img src="https://user-images.githubusercontent.com/46201537/177822117-0e7d204e-2d82-4084-813b-56a77e304005.PNG" width=240/>
+<img src="https://user-images.githubusercontent.com/46201537/177822129-a4548110-1a71-4804-a7e7-5876982e925b.PNG" width=240/>
+<img src="https://user-images.githubusercontent.com/46201537/177822135-b0dbe0a7-c70d-4127-92b3-194e13a21c55.PNG" width=240/>
+<img src="https://user-images.githubusercontent.com/46201537/177822155-a08e6038-c416-4251-9aa6-7d62ec779205.PNG" width=240/>  
+
+</view>
