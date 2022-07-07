@@ -22,7 +22,7 @@ Continuous Integration and Continuous Delivery is an one of the most essential t
 
 
 ## Deep Links
-Multi Translator App supports deep links for both iOS and Android. Deep links are useful when navigating the app from outside of it. This app takes two different parameters by deep link for translating. Also, Flutter supports universal links as well. For further reading about Deep Linking [here] (https://docs.flutter.dev/development/ui/navigation/deep-linking).
+Multi Translator App supports deep links for both iOS and Android. Deep links are useful when navigating the app from outside of it. This app takes two different parameters by deep link for translating. Also, Flutter supports universal links as well. For further reading about Deep Linking [here](https://docs.flutter.dev/development/ui/navigation/deep-linking).
 
 #### Parameters
 - text
