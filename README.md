@@ -18,14 +18,50 @@ Continuous Integration and Continuous Delivery is an one of the most essential t
 
 <br/>
 
-## Authors
 
-👤 **Selim Ustel**
+## Deep Links
+Multi Translator App supports deep links for both iOS and Android. Deep links are useful when navigating the app from outside of it. This app takes two different parameters by deep link for translating. Also, Flutter supports universal links as well. For further reading about Deep Linking [here] (https://docs.flutter.dev/development/ui/navigation/deep-linking).
 
-- GitHub: [@stelselim](https://github.com/stelselim)
-- LinkedIn: [@selimustel](https://www.linkedin.com/in/selimustel/)
+#### Parameters
+- text
+- lan (default: en)
 
 <br/>
+
+#### Example - 1
+Parameters
+```
+text=hello
+```
+Command for iOS Simulator
+```
+xcrun simctl openurl booted "ibksteltranslate:translation?text=hello"
+```
+Command for Android Emulator
+```
+adb shell am start  "ibksteltranslate://translation?text=hello"
+```
+
+
+<br/>
+
+#### Example - 2
+Parameters
+```
+text=merhaba
+lan=tr
+```
+Command for iOS Simulator
+```
+xcrun simctl openurl booted "ibksteltranslate:translation?text=merhaba&lan=tr"
+```
+Commands for Android Emulator
+```
+adb shell am start  "ibksteltranslate://translation?text=merhaba&lan=tr"
+```
+
+<br/>
+
 
 ## Setup
 This project uses generated files to run. Before running the app, please run.
@@ -35,3 +71,13 @@ flutter pub get
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
+<br/>
+
+## Authors
+
+👤 **Selim Ustel**
+
+- GitHub: [@stelselim](https://github.com/stelselim)
+- LinkedIn: [@selimustel](https://www.linkedin.com/in/selimustel/)
+
+<br/>
