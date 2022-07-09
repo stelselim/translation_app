@@ -11,9 +11,4 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:translation/main.dart';
 import 'package:translation/presentation/core/app_widget.dart';
 
-void main() {
-  testWidgets('First Test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const App());
-  });
-}
+void main() {}
