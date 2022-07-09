@@ -1,6 +1,8 @@
 # Multi Translator App
 <b>An app utilizes to translate any text to multiple languages.</b>
 
+[![Codemagic build status](https://api.codemagic.io/apps/62b9b53b58fcc97673f288e5/62b9b53b58fcc97673f288e4/status_badge.svg)](https://codemagic.io/apps/62b9b53b58fcc97673f288e5/62b9b53b58fcc97673f288e4/latest_build)
+
 <img width=180 src="https://user-images.githubusercontent.com/46201537/177821784-688d3b39-57f0-40dd-9342-41f6a1314bd9.png"/>
 
 <br/>
