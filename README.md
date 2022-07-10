@@ -7,6 +7,19 @@
 
 <br/>
 
+## Features
+- [X] Localization
+- [X] Multiple Translation
+- [X] Single Translation 
+- [X] Deep Links
+- [X] Translation History
+- [X] Translation Share & Copy 
+- [ ] Reminder Notification for Translation History
+- [ ] Auto Language Detection
+- [ ] Listenable Translations
+
+<br/>
+
 ## Domain-Driven Design
 Domain-driven design is a concept in order structure software projects and maintain the domain layer of the source code by [Eric Evans](https://www.linkedin.com/in/ericevansddd/). For further reading, [here](https://www.domainlanguage.com/ddd/). DDD is robust, solid & be applicable to various fields of software development. Thanks to DDD, massive projects are much maintainable with its principles. 
 
