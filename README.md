@@ -72,8 +72,29 @@ adb shell am start  "ibksteltranslate://translation?text=merhaba&lan=tr"
 This project uses generated files to run. Before running the app, please run.
 
 ```
+git clone https://github.com/stelselim/translation_app.git
+cd translation_app
 flutter pub get
 flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+<br/>
+
+## Run
+Runs the project.
+```
+flutter pub get
+flutter run
+```
+
+
+<br/>
+
+## Test
+Runs unit tests.
+```
+flutter pub get
+flutter test
 ```
 
 <br/>
