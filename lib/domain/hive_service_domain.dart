@@ -1,3 +1,3 @@
 abstract class HiveServiceDomain {
-  Future<void> init();
+  Future<void> init(String path);
 }

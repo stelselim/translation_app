@@ -13,9 +13,8 @@ class HiveService extends HiveServiceDomain {
   late Box<UserModel> userModelHiveBox;
 
   @override
-  Future<void> init() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+  Future<void> init(String path) async {
+    Hive.init(path);
 
     Hive.registerAdapter<TranslationModel>(TranslationModelAdapter());
     Hive.registerAdapter<LanguageTypes>(LanguageTypesAdapter());
