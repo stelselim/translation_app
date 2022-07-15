@@ -1,13 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
-import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:translation/application/models/translation_model.dart';
 import 'package:translation/application/models/user_model.dart';
-import 'package:translation/constants/language_constants.dart';
 import 'package:translation/infrastructure/services/hive_service/hive_service.dart';
 import 'package:translation/infrastructure/services/user_service.dart';
+
+import '../mock_classses.dart';
 
 void main() async {
   final userService = UserService.instance;
@@ -54,34 +52,4 @@ void main() async {
       expect(await Directory(kApplicationDocumentsPath).exists(), false);
     });
   });
-}
-
-const kApplicationDocumentsPath = "applicationDocumentsPath";
-
-class FakePathProviderPlatform extends Fake
-    with MockPlatformInterfaceMixin
-    implements PathProviderPlatform {
-  @override
-  Future<String?> getApplicationDocumentsPath() async {
-    return kApplicationDocumentsPath;
-  }
-}
-
-TranslationModel mockTranslationModel = TranslationModel(
-  id: "_getRandomId",
-  text: "hello",
-  sourceLanguage: LanguageTypes.english,
-  translateTime: DateTime(2020),
-  translatedTexts: {
-    LanguageTypes.turkish: "merhaba",
-  },
-);
-
-// Removes local directory, created by Hive for testing.
-Future<void> removeLocalHiveTestDirectory() async {
-  try {
-    await Directory(kApplicationDocumentsPath).delete(recursive: true);
-  } catch (e) {
-    print(e);
-  }
 }
