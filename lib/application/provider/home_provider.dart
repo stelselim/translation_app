@@ -27,17 +27,7 @@ class HomeProvider extends ChangeNotifier {
   HomeProvider({required this.translateRepository}) {
     editMode = false;
     loading = false;
-    // selectedTargetLanguages = [];
-    selectedTargetLanguages = [
-      LanguageTypes.arabic,
-      LanguageTypes.afrikaans,
-      LanguageTypes.chineseSimplified,
-      LanguageTypes.turkish,
-      LanguageTypes.english,
-      LanguageTypes.spanish,
-      LanguageTypes.french,
-      LanguageTypes.italian,
-    ];
+    selectedTargetLanguages = [...kAllLanguages];
     sourceLanguage = LanguageTypes.english;
   }
 

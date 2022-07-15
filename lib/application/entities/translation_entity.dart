@@ -81,9 +81,9 @@ class TranslationEntity {
   factory TranslationEntity.fromJson(String source) =>
       TranslationEntity.fromMap(json.decode(source));
 
-  TranslationModel toTranslationModel() {
+  TranslationModel toTranslationModel({String? id}) {
     return TranslationModel(
-      id: getRandomId,
+      id: id ?? getRandomId,
       text: text,
       sourceLanguage: languageTypeFromCode(sourceLanguageCode),
       translateTime: translateTime,
