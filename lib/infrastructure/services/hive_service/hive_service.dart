@@ -6,6 +6,8 @@ import 'package:translation/constants/language_constants.dart';
 import 'package:translation/domain/hive_service_domain.dart';
 import 'package:translation/infrastructure/services/hive_service/hive_constants.dart';
 
+final initialUserModel = UserModel(history: []);
+
 class HiveService extends HiveServiceDomain {
   HiveService._();
   static HiveService instance = HiveService._();
@@ -13,9 +15,8 @@ class HiveService extends HiveServiceDomain {
   late Box<UserModel> userModelHiveBox;
 
   @override
-  Future<void> init() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+  Future<void> init(String path) async {
+    Hive.init(path);
 
     Hive.registerAdapter<TranslationModel>(TranslationModelAdapter());
     Hive.registerAdapter<LanguageTypes>(LanguageTypesAdapter());
@@ -28,7 +29,6 @@ class HiveService extends HiveServiceDomain {
 extension HiveUserExtension on HiveService {
   UserModel get getUserModelFromHive {
     if (userModelHiveBox.isEmpty) {
-      final initialUserModel = UserModel(history: []);
       userModelHiveBox.add(initialUserModel);
       return initialUserModel;
     }

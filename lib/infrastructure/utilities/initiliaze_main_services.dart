@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:translation/infrastructure/services/hive_service/hive_service.dart';
 import 'package:translation/infrastructure/services/user_service.dart';
 
@@ -15,7 +16,8 @@ Future<void> initiliazeMainServices() async {
   }
 
   try {
-    await HiveService.instance.init();
+    final directory = await getApplicationDocumentsDirectory();
+    await HiveService.instance.init(directory.path);
   } catch (e) {
     log("Error on initiliazing HiveService: $e");
   }

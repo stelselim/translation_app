@@ -29,9 +29,15 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  integration_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
   flutter_lints: ^2.0.0
   build_runner: ^2.1.11
+  
+  plugin_platform_interface: ^2.1.2
+  path_provider_platform_interface: ^2.0.4
 
 flutter:
   uses-material-design: true
