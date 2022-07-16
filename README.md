@@ -7,6 +7,19 @@
 
 <br/>
 
+## Features
+- [X] Localization
+- [X] Multiple Translation
+- [X] Single Translation 
+- [X] Deep Links
+- [X] Translation History
+- [X] Translation Share & Copy 
+- [ ] Reminder Notification for Translation History
+- [ ] Auto Language Detection
+- [ ] Listenable Translations
+
+<br/>
+
 ## Domain-Driven Design
 Domain-driven design is a concept in order structure software projects and maintain the domain layer of the source code by [Eric Evans](https://www.linkedin.com/in/ericevansddd/). For further reading, [here](https://www.domainlanguage.com/ddd/). DDD is robust, solid & be applicable to various fields of software development. Thanks to DDD, massive projects are much maintainable with its principles. 
 
@@ -72,8 +85,29 @@ adb shell am start  "ibksteltranslate://translation?text=merhaba&lan=tr"
 This project uses generated files to run. Before running the app, please run.
 
 ```
+git clone https://github.com/stelselim/translation_app.git
+cd translation_app
 flutter pub get
 flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+<br/>
+
+## Run
+Runs the project.
+```
+flutter pub get
+flutter run
+```
+
+
+<br/>
+
+## Test
+Runs unit tests.
+```
+flutter pub get
+flutter test
 ```
 
 <br/>
